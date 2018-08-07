@@ -1,0 +1,2 @@
+class HotelRoomAvailabilityService
+end

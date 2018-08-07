@@ -1,0 +1,2 @@
+class RateUpdateService
+end
