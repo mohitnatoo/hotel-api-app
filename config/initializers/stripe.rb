@@ -1,0 +1,1 @@
+Stripe.api_key = ENV["STRIPE_API_KEY"] || "sk_test_8ol2O6Qovn8JJwyeQoK3YOh5"

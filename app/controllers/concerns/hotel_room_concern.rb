@@ -12,7 +12,10 @@ module HotelRoomConcern
       @hotel = Hotel.find_by_id(params[:hotel_id])
       raise ActiveRecord::RecordNotFound if @hotel.nil?
 
-      @hotel_room = HotelRoom.find_by_id(params[:hotel_room_id])
+      @room_type = RoomType.find_by_id(params[:room_type_id])
+      raise ActiveRecord::RecordNotFound if @room_type.nil?
+
+      @hotel_room = @hotel.hotel_rooms.find_by( room_type: @room_type )
       raise ActiveRecord::RecordNotFound if @hotel_room.nil?
 
       # XXX::

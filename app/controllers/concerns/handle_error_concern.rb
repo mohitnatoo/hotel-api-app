@@ -1,11 +1,11 @@
-module HandleErrors
+module HandleErrorConcern
 
   extend ActiveSupport::Concern
 
   included do
-    # rescue_from StandardError, with: :handle_api_error
-    # rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
-    # rescue_from ValidationError, with: :handle_bad_request
+    rescue_from StandardError, with: :handle_api_error
+    rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
+    rescue_from ValidationError, with: :handle_bad_request
   end
 
   private
